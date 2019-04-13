@@ -1,0 +1,55 @@
+INSERT INTO Department VALUES(1,'General Medicine',3);
+INSERT INTO Department VALUES(2,'Surgery',4);
+INSERT INTO Department VALUES(3,'Psychiatry',8);
+INSERT INTO Department VALUES(4,'Orthopaedics',11);
+INSERT INTO Department VALUES(5,'Neurology',14);
+INSERT INTO Department VALUES(6,'Cardiology',17);
+INSERT INTO Department VALUES(7,'Gynaecology',19);
+
+INSERT INTO Doctor values(1,1,'Ramesh','Manipal','BurksR@univ.edu','M',9532627342);
+INSERT INTO Doctor values(2,1,'Damien','Manipal','AvilaD@univ.edu','M',1234567897);
+INSERT INTO Doctor values(3,1,'Robin','Gabon','OlsenR@univ.edu','M',3455767432);
+
+
+INSERT INTO Doctor values(4,2,'Edmund','Manipal','MoisesE@univ.edu','M',3445627342);
+INSERT INTO Doctor values(5,2,'Burks','Manipal','BrianH@univ.edu','M',3434343434);
+INSERT INTO Doctor values(6,2,'Avila','Fiji','ClaudeE@univ.edu','F',7867687858);
+INSERT INTO Doctor values(7,2,'Moises','Manipal','MosleyE@univ.edu','M',1919293949);
+
+INSERT INTO Doctor values(8,3,'Heath','Afghanistan','DerekA@univ.edu','M',2525252525);
+INSERT INTO Doctor values(9,3,'Elvin','Albania','HawkinsC@univ.edu','M',1313131313);
+
+INSERT INTO Doctor values(10,1,'Edmund','Manipal','PateA@univ.edu','M',1414141414);
+INSERT INTO Doctor values(11,1,'Antoine','Algeria','AustinL@univ.edu','F',1515151515);
+INSERT INTO Doctor values(12,1,'Derek','Andorra','KendrickR@univ.edu','M',1616161616);
+INSERT INTO Doctor values(13,1,'Claude','Angola','SimsA@univ.edu','F',1717171717);
+
+INSERT INTO Doctor values(14,1,'Haney','Belarus','MullinsK@univ.edu','F',1818181818);
+INSERT INTO Doctor values(15,1,'Rosella','Bhutan','ChuckL@univ.edu','F',1919191919);
+
+INSERT INTO Doctor values(16,1,'Mccoy','Botswana','PayneL@univ.edu','M',2121212121);
+INSERT INTO Doctor values(17,1,'Hawkins','Bulgaria','BaxterJ@univ.edu','M',3131313131);
+
+INSERT INTO Doctor values(18,1,'Pate','Croatia','WeissG@univ.edu','M',4141414141);
+INSERT INTO Doctor values(19,1,'Andrea','Manipal','DeirdreF@univ.edu','F',5151515151);
+INSERT INTO Doctor values(20,1,'Callie','Manipal','FernandoT@univ.edu','F',6161616161);
+INSERT INTO Doctor values(21,1,'Reba','Manipal','GarrisonP@univ.edu','F',7171717171);
+
+
+
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+INSERT INTO Patient values(18,'Pate','03-12-1989','M','WeissG@univ.edu','Manipal','O+');
+
