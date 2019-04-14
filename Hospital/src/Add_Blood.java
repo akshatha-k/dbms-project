@@ -6,6 +6,8 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,17 +19,17 @@ import javax.swing.DefaultComboBoxModel;
  *
  * @author aditcam
  */
-public class Create_app extends javax.swing.JFrame {
+public class Add_Blood extends javax.swing.JFrame {
 	String cust_id;
 	String branch_id;
     /**
      * Creates new form Admin_pat
      */
-    public Create_app() {
+    public Add_Blood() {
         initComponents();
           this.setLocationRelativeTo(null);
     }
-    public Create_app(String c_id,String b_id)
+    public Add_Blood(String c_id,String b_id)
     {
         initComponents();
         cust_id=c_id;
@@ -64,9 +66,9 @@ public class Create_app extends javax.swing.JFrame {
 
         jLabel1.setText("Patient ID");
 
-        jLabel2.setText("Appointment Date");
+        jLabel2.setText("Quantity");
 
-        jLabel8.setText("Appointment Booking");
+        jLabel8.setText("Manage Blood Bank");
 
         jLabel9.setText("Fill the fields given below (All fields are mandatory)");
 
@@ -93,7 +95,7 @@ public class Create_app extends javax.swing.JFrame {
         				.addGroup(layout.createSequentialGroup()
         					.addPreferredGap(ComponentPlacement.RELATED)
         					.addComponent(bb1)
-        					.addGap(78)
+        					.addGap(89)
         					.addComponent(jLabel8))
         				.addGroup(layout.createSequentialGroup()
         					.addGap(21)
@@ -106,13 +108,13 @@ public class Create_app extends javax.swing.JFrame {
         						.addComponent(jLabel2))))
         			.addGap(33))
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(83)
-        			.addComponent(jLabel9)
-        			.addContainerGap(83, Short.MAX_VALUE))
-        		.addGroup(layout.createSequentialGroup()
         			.addGap(199)
         			.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
         			.addContainerGap(215, Short.MAX_VALUE))
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(91)
+        			.addComponent(jLabel9)
+        			.addContainerGap(104, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
@@ -121,9 +123,9 @@ public class Create_app extends javax.swing.JFrame {
         			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
         				.addComponent(bb1)
         				.addComponent(jLabel8, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
-        			.addGap(14)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addComponent(jLabel9)
-        			.addGap(42)
+        			.addGap(38)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(jLabel1)
         				.addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 11, GroupLayout.PREFERRED_SIZE))
@@ -131,9 +133,9 @@ public class Create_app extends javax.swing.JFrame {
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(id, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         				.addComponent(name, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-        			.addGap(42)
+        			.addGap(63)
         			.addComponent(jButton1)
-        			.addContainerGap(98, Short.MAX_VALUE))
+        			.addContainerGap(77, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 
@@ -199,7 +201,7 @@ public class Create_app extends javax.swing.JFrame {
     private void bb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bb1ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Doctor_option ob  = new Doctor_option(cust_id,branch_id);
+        Blood_Bank ob  = new Blood_Bank(cust_id,branch_id);
         ob.setVisible(true);
     }//GEN-LAST:event_bb1ActionPerformed
 
@@ -220,20 +222,20 @@ public class Create_app extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Create_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Add_Blood.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Create_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Add_Blood.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Create_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Add_Blood.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Create_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Add_Blood.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Create_app().setVisible(true);
+                new Add_Blood().setVisible(true);
             }
         });
     }
@@ -246,5 +248,4 @@ public class Create_app extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField name;
-    // End of variables declaration//GEN-END:variables
 }

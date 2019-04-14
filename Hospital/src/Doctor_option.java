@@ -127,7 +127,7 @@ String branch_id;
         if(n==0)
         {
             this.setVisible(false);
-            Login ob  = new Login();
+            Doctor_login ob  = new Doctor_login();
             ob.setVisible(true);
         }
 
@@ -159,7 +159,7 @@ String branch_id;
             java.util.logging.Logger.getLogger(Doctor_option.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+ 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

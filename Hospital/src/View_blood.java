@@ -6,6 +6,9 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,17 +20,17 @@ import javax.swing.DefaultComboBoxModel;
  *
  * @author aditcam
  */
-public class Create_app extends javax.swing.JFrame {
+public class View_blood extends javax.swing.JFrame {
 	String cust_id;
 	String branch_id;
     /**
      * Creates new form Admin_pat
      */
-    public Create_app() {
+    public View_blood() {
         initComponents();
           this.setLocationRelativeTo(null);
     }
-    public Create_app(String c_id,String b_id)
+    public View_blood(String c_id,String b_id)
     {
         initComponents();
         cust_id=c_id;
@@ -46,9 +49,7 @@ public class Create_app extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         id = new javax.swing.JTextField();
-        name = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -62,13 +63,11 @@ public class Create_app extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Patient ID");
+        jLabel1.setText("Total Quantity:");
 
-        jLabel2.setText("Appointment Date");
+        jLabel8.setText("View Blood Bank");
 
-        jLabel8.setText("Appointment Booking");
-
-        jLabel9.setText("Fill the fields given below (All fields are mandatory)");
+        jLabel9.setText("Enter which blood group to check");
 
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -83,57 +82,60 @@ public class Create_app extends javax.swing.JFrame {
                 bb1ActionPerformed(evt);
             }
         });
+        
+        JComboBox<String> comboBox = new JComboBox<String>();
+        comboBox.setModel(new DefaultComboBoxModel(new String[] {"A+", "B+", "AB+", "O+", "A-", "B-", "AB-", "O-", "Other"}));
+        
+        JLabel label = new JLabel();
+        label.setText("Blood Group");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap(12, Short.MAX_VALUE)
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(bb1)
-        					.addGap(78)
-        					.addComponent(jLabel8))
+        					.addGap(20)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(id, GroupLayout.PREFERRED_SIZE, 348, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(label, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
+        						.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        							.addComponent(jLabel9)
+        							.addGroup(layout.createSequentialGroup()
+        								.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 182, GroupLayout.PREFERRED_SIZE)
+        								.addGap(47)
+        								.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)))))
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(21)
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jLabel1)
-        						.addComponent(id, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE))
-        					.addGap(94)
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(name, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE)
-        						.addComponent(jLabel2))))
-        			.addGap(33))
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(83)
-        			.addComponent(jLabel9)
-        			.addContainerGap(83, Short.MAX_VALUE))
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(199)
-        			.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(215, Short.MAX_VALUE))
+        					.addContainerGap()
+        					.addComponent(bb1)
+        					.addGap(100)
+        					.addComponent(jLabel8)))
+        			.addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap()
-        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-        				.addComponent(bb1)
-        				.addComponent(jLabel8, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
-        			.addGap(14)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(35)
+        					.addComponent(jLabel8, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(14)
+        					.addComponent(bb1)))
+        			.addGap(18)
         			.addComponent(jLabel9)
-        			.addGap(42)
-        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(jLabel1)
-        				.addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 11, GroupLayout.PREFERRED_SIZE))
+        			.addGap(93)
+        			.addComponent(label)
         			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(id, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(name, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-        			.addGap(42)
-        			.addComponent(jButton1)
-        			.addContainerGap(98, Short.MAX_VALUE))
+        				.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jButton1))
+        			.addGap(18)
+        			.addComponent(jLabel1)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(id, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(23, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 
@@ -146,19 +148,21 @@ public class Create_app extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(!((name.getText()).equals(""))&&!((id.getText()).equals("")))
-                {
+        if(comboBox.getSelectedItem().toString().equals("<None>"))
+        {
+            JOptionPane.showMessageDialog(this,"Select a Blood Group");
+        }
+        else
+        {
 //                    if(cb1.getSelectedItem().toString().equals("<None>"))
 //                    {
 //                        JOptionPane.showMessageDialog(this,"Select a department");
 //                    }
-                        String e_name = name.getText();
-                        String e_id = id.getText();
-                        String query="insert into employee values('"+e_id+"','"+e_name+"','cust_id','Y')";
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
-                        System.out.println(query);
-                        
+        				String temp=comboBox.getSelectedItem().toString();
+        				String e_dept=temp.equals("IT")?"001":temp.equals("Research")?"002":temp.equals("Finance")?"003":temp.equals("Marketing")?"004":temp.equals("HR")?"005":temp.equals("Purchasing")?"006":temp.equals("Publicity")?"007":"008";
+                        id.setText("xyz");//Select sum(quantity) from blood where bloodgroup=e_dept. 
                         try{
                             //step1 load the driver class  
                             Class.forName("oracle.jdbc.driver.OracleDriver");  
@@ -171,13 +175,11 @@ public class Create_app extends javax.swing.JFrame {
                             Statement stmt=con.createStatement();  
 
                             //step4 execute query
-                            ResultSet rs = stmt.executeQuery(query);
            
 //                            rs = stmt.executeQuery(query2);
                             
                             JOptionPane.showMessageDialog(this,"Records successfully inserted");
                             
-                            name.setText("");
                             id.setText("");                     
                             con.close();  
                              
@@ -191,15 +193,12 @@ public class Create_app extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(this,"Error");
                         }   
                 }
-        else{
-            JOptionPane.showMessageDialog(this,"Fill all the fields");
-        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void bb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bb1ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Doctor_option ob  = new Doctor_option(cust_id,branch_id);
+        Blood_Bank ob  = new Blood_Bank(cust_id,branch_id);
         ob.setVisible(true);
     }//GEN-LAST:event_bb1ActionPerformed
 
@@ -220,31 +219,29 @@ public class Create_app extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Create_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_blood.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Create_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_blood.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Create_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_blood.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Create_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_blood.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Create_app().setVisible(true);
+                new View_blood().setVisible(true);
             }
         });
     }
     private javax.swing.JButton bb1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField id;
+    private javax.swing.JComboBox<String> comboBox;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField name;
-    // End of variables declaration//GEN-END:variables
 }

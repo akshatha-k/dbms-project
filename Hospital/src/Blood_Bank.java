@@ -105,32 +105,27 @@ String branch_id;
         );
         getContentPane().setLayout(layout);
 
-        pack();
+        pack(); 
     }// </editor-fold>//GEN-END:initComponents
 
     private void view_hiredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_hiredActionPerformed
                 this.setVisible(false);
-                 new Add_blood(cust_id,branch_id).setVisible(true);    
+                 new Add_Blood(cust_id,branch_id).setVisible(true);    
         
      
     }//GEN-LAST:event_view_hiredActionPerformed
 
     private void hireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hireActionPerformed
        this.setVisible(false);
-        View_blood ob2 = new View_Blood(cust_id,branch_id);
+        View_blood ob2 = new View_blood(cust_id,branch_id);
         ob2.setVisible(true);
     }//GEN-LAST:event_hireActionPerformed
 
     private void bb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bb2ActionPerformed
         // TODO add your handling code here:
-        int n = JOptionPane.showConfirmDialog(this,"You will have to re-enter your login credentials","Do you want to proceed to the homepage ?",JOptionPane.YES_NO_OPTION);
-        if(n==0)
-        {
-            this.setVisible(false);
-            Login ob  = new Login();
-            ob.setVisible(true);
-        }
-
+        this.setVisible(false);
+        Doctor_option ob  = new Doctor_option(cust_id,branch_id);
+        ob.setVisible(true);
     }//GEN-LAST:event_bb2ActionPerformed
 
     /**
