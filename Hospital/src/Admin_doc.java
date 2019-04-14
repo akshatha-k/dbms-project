@@ -6,6 +6,8 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -53,7 +55,7 @@ public class Admin_doc extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        DOB = new javax.swing.JTextField();
+        dno = new javax.swing.JTextField();
         bb1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,9 +102,9 @@ public class Admin_doc extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setText("Deptartment");
+        jLabel12.setText("Department");
 
-        DOB.setToolTipText("Eg. 01-DEC-1998");
+        dno.setToolTipText("Eg. 01-DEC-1998");
 
         bb1.setText("<-- Back");
         bb1.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +112,11 @@ public class Admin_doc extends javax.swing.JFrame {
                 bb1ActionPerformed(evt);
             }
         });
+        
+        email = new JTextField();
+        email.setColumns(10);
+        
+        lblEmail = new JLabel("Email");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -129,17 +136,12 @@ public class Admin_doc extends javax.swing.JFrame {
         					.addGap(97)
         					.addGroup(layout.createParallelGroup(Alignment.LEADING)
         						.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
-        							.addComponent(DOB)
+        							.addComponent(email)
+        							.addComponent(dno)
         							.addComponent(name, GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
         							.addComponent(jLabel2)
         							.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 161, GroupLayout.PREFERRED_SIZE))
-        						.addComponent(jLabel7)
-        						.addGroup(layout.createSequentialGroup()
-        							.addComponent(rb1, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)
-        							.addPreferredGap(ComponentPlacement.UNRELATED)
-        							.addComponent(rb2)
-        							.addGap(15)
-        							.addComponent(rb3, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)))
+        						.addComponent(lblEmail))
         					.addGap(46))
         				.addGroup(layout.createSequentialGroup()
         					.addContainerGap()
@@ -151,7 +153,16 @@ public class Admin_doc extends javax.swing.JFrame {
         					.addComponent(jLabel9))
         				.addGroup(layout.createSequentialGroup()
         					.addGap(237)
-        					.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)))
+        					.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(107)
+        					.addComponent(jLabel7)
+        					.addGap(18)
+        					.addComponent(rb1, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(rb2)
+        					.addGap(15)
+        					.addComponent(rb3, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)))
         			.addContainerGap())
         );
         layout.setVerticalGroup(
@@ -178,18 +189,22 @@ public class Admin_doc extends javax.swing.JFrame {
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(ph_no, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(DOB, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(dno, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         			.addGap(18)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(jLabel5)
-        				.addComponent(jLabel7))
+        				.addComponent(lblEmail))
         			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(address, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(email, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addGap(39)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(rb1)
         				.addComponent(rb2)
-        				.addComponent(rb3))
-        			.addPreferredGap(ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+        				.addComponent(rb3)
+        				.addComponent(jLabel7))
+        			.addPreferredGap(ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
         			.addComponent(jButton1)
         			.addGap(32))
         );
@@ -208,7 +223,7 @@ public class Admin_doc extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(!((name.getText()).equals(""))&&!(DOB.getText().equals(""))&&!((ph_no.getText()).equals(""))&&!((address.getText()).equals(""))&&!((id.getText()).equals("")))
+        if(!((name.getText()).equals(""))&&!(dno.getText().equals(""))&&!((ph_no.getText()).equals(""))&&!((address.getText()).equals(""))&&!((id.getText()).equals("")))
                 {
 //                    if(cb1.getSelectedItem().toString().equals("<None>"))
 //                    {
@@ -222,11 +237,15 @@ public class Admin_doc extends javax.swing.JFrame {
                     {   
                         String e_name = name.getText();
                         String e_id = id.getText();
+                        int eid=Integer.parseInt(e_id);
                         String e_ph = ph_no.getText();
+                        int eph=Integer.parseInt(e_ph);
+                        String e_dept=jLabel12.getText();
+                        int edno=Integer.parseInt(e_dept);
                         String e_address=address.getText();
-                        String e_dob=DOB.getText();
-                        String e_hdeg= rb1.isSelected()?"Male":rb2.isSelected()?"Female":"Other";
-                        String query="insert into employee values('"+e_id+"','"+e_name+"','"+e_ph+"','"+e_address+"','"+e_hdeg+"','"+e_dob+"','Y')";
+                        String e_email=lblEmail.getText();
+                        String e_hdeg= rb1.isSelected()?"M":rb2.isSelected()?"F":"O";
+                        String query="insert into doctor values('"+eid+"','"+edno+"','"+e_name+"','"+e_address+"','"+e_email+"','"+e_hdeg+"','"+eph+"')";
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
                         System.out.println(query);
@@ -251,7 +270,7 @@ public class Admin_doc extends javax.swing.JFrame {
                             
                             name.setText("");
                             id.setText("");
-                            DOB.setText("");
+                            dno.setText("");
                             ph_no.setText("");
                             address.setText("");
                             
@@ -317,7 +336,7 @@ public class Admin_doc extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DOB;
+    private javax.swing.JTextField dno;
     private javax.swing.JTextField address;
     private javax.swing.JButton bb1;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -336,5 +355,6 @@ public class Admin_doc extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb1;
     private javax.swing.JRadioButton rb2;
     private javax.swing.JRadioButton rb3;
-    // End of variables declaration//GEN-END:variables
+    private JTextField email;
+    private JLabel lblEmail;
 }

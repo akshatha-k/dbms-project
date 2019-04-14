@@ -160,9 +160,10 @@ public class View_blood extends javax.swing.JFrame {
 //                    }
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
-        				String temp=comboBox.getSelectedItem().toString();
-        				String e_dept=temp.equals("IT")?"001":temp.equals("Research")?"002":temp.equals("Finance")?"003":temp.equals("Marketing")?"004":temp.equals("HR")?"005":temp.equals("Purchasing")?"006":temp.equals("Publicity")?"007":"008";
-                        id.setText("xyz");//Select sum(quantity) from blood where bloodgroup=e_dept. 
+        				String b_g=comboBox.getSelectedItem().toString();
+        				String query = "select sum(amount) from blood_bank where blood_group='"+b_g+"'";
+        		        //System.out.print(query);
+                        id.setText(query); 
                         try{
                             //step1 load the driver class  
                             Class.forName("oracle.jdbc.driver.OracleDriver");  

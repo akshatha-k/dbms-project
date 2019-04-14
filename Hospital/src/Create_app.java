@@ -18,6 +18,7 @@ import javax.swing.DefaultComboBoxModel;
  * @author aditcam
  */
 public class Create_app extends javax.swing.JFrame {
+	int d_id;
 	String cust_id;
 	String branch_id;
     /**
@@ -31,6 +32,7 @@ public class Create_app extends javax.swing.JFrame {
     {
         initComponents();
         cust_id=c_id;
+        d_id=Integer.parseInt(c_id);
         branch_id=b_id;
         
     }
@@ -152,9 +154,13 @@ public class Create_app extends javax.swing.JFrame {
 //                    {
 //                        JOptionPane.showMessageDialog(this,"Select a department");
 //                    }
-                        String e_name = name.getText();
-                        String e_id = id.getText();
-                        String query="insert into employee values('"+e_id+"','"+e_name+"','cust_id','Y')";
+        	 jLabel1.setText("Patient ID");
+
+             jLabel2.setText("Appointment Date");
+                        String p_id = jLabel1.getText();
+                        int pid=Integer.parseInt(p_id);
+                        String a_date = jLabel2.getText();
+                        String query="insert into appointment values('"+pid+"','d_id','"+a_date+"')";
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
                         System.out.println(query);

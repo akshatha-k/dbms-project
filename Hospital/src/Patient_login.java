@@ -121,8 +121,8 @@ public class Patient_login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String e_id = tf1.getText();
-        String dob = tf2.getText();
-        String query = "select id from employee where id='"+e_id+"' and dob='"+dob+"'";
+        String pno = tf2.getText();
+        String query = "select pid from patient where pid='"+e_id+"' and ph_no='"+pno+"'";
         //System.out.print(query);
         try{  
 //step1 load the driver class  

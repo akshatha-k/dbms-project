@@ -111,9 +111,11 @@ public class Doctor_login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String c_id = tf1.getText();
+        String d_id = tf1.getText();
+        int did=Integer.parseInt(d_id);
         String b_id = tf2.getText();
-        String query = "select comp_id,branch_id from companies where branch_id='"+b_id+"' and comp_id='"+c_id+"'";
+        int dnum=Integer.parseInt(b_id);
+        String query = "select did,dno from companies where dno='"+dnum+"' and did='"+did+"'";
         //System.out.print(query);
         try{  
 //step1 load the driver class  

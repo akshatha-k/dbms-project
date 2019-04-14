@@ -154,9 +154,11 @@ public class Add_Blood extends javax.swing.JFrame {
 //                    {
 //                        JOptionPane.showMessageDialog(this,"Select a department");
 //                    }
-                        String e_name = name.getText();
-                        String e_id = id.getText();
-                        String query="insert into employee values('"+e_id+"','"+e_name+"','cust_id','Y')";
+                        String p_id = jLabel1.getText();
+                        int pid=Integer.parseInt(p_id);
+                        String p_quant = jLabel2.getText();
+                        int pq=Integer.parseInt(p_quant);
+                        String query="insert into blood_bank values('"+pid+"','"+pq+"')";
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
                         System.out.println(query);

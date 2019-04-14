@@ -250,16 +250,17 @@ public class Admin_pat extends javax.swing.JFrame {
                     {   
                         String e_name = name.getText();
                         String e_id = id.getText();
+                        int pid=Integer.parseInt(e_id);
                         String e_email=email.getText();
                         String e_ph = ph_no.getText();
                         String e_address=address.getText();
-                        String temp=cb1.getSelectedItem().toString();
-                        String e_dept=temp.equals("IT")?"001":temp.equals("Research")?"002":temp.equals("Finance")?"003":temp.equals("Marketing")?"004":temp.equals("HR")?"005":temp.equals("Purchasing")?"006":temp.equals("Publicity")?"007":"008";
+                        String e_bg=cb1.getSelectedItem().toString();
+                       // String e_bg=temp.equals("A+")?"A+":temp.equals("B+")?"B+":temp.equals("Finance")?"003":temp.equals("Marketing")?"004":temp.equals("HR")?"005":temp.equals("Purchasing")?"006":temp.equals("Publicity")?"007":"008";
                         String e_dob=DOB.getText();
-                        String e_hdeg= rb1.isSelected()?"Male":rb2.isSelected()?"Female":"Other";
-                        String query="insert into employee values('"+e_id+"','"+e_name+"','"+e_email+"','"+e_ph+"','"+e_address+"','"+e_hdeg+"','"+e_dob+"','"+e_dept+"','Y')";
-                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
-                        System.out.println(query2);
+                        String e_hdeg= rb1.isSelected()?"M":rb2.isSelected()?"F":"O";
+                        String query="insert into patient values('"+pid+"','"+e_name+"','"+e_dob+"','"+e_hdeg+"','"+e_email+"','"+e_ph+"','"+e_address+"','"+e_bg+"')";
+                        //String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
+                        //System.out.println(query2);
                         System.out.println(query);
                         
                         try{

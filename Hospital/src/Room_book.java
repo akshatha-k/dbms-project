@@ -39,7 +39,7 @@ public class Room_book extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         id = new javax.swing.JTextField();
         name = new javax.swing.JTextField();
-        ph_no = new javax.swing.JTextField();
+        in_date = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,7 +47,7 @@ public class Room_book extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        DOB = new javax.swing.JTextField();
+        out_date = new javax.swing.JTextField();
         bb1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,6 +63,7 @@ public class Room_book extends javax.swing.JFrame {
         jLabel2.setText("Room No.");
 
         jLabel4.setText("In date");
+//        jLabel12.setText("Out Date");
 
         jLabel8.setText("Room Booking");
 
@@ -77,7 +78,7 @@ public class Room_book extends javax.swing.JFrame {
 
         jLabel12.setText("Out Date");
 
-        DOB.setToolTipText("Eg. 01-DEC-1998");
+        out_date.setToolTipText("Eg. 01-DEC-1998");
 
         bb1.setText("<-- Back");
         bb1.addActionListener(new java.awt.event.ActionListener() {
@@ -100,10 +101,10 @@ public class Room_book extends javax.swing.JFrame {
         								.addComponent(jLabel4)
         								.addComponent(jLabel1)
         								.addComponent(id, GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-        								.addComponent(ph_no))
+        								.addComponent(in_date))
         							.addGap(110)
         							.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        								.addComponent(DOB)
+        								.addComponent(out_date)
         								.addComponent(name)
         								.addComponent(jLabel2)
         								.addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 161, GroupLayout.PREFERRED_SIZE)))
@@ -150,8 +151,8 @@ public class Room_book extends javax.swing.JFrame {
         						.addComponent(jLabel12))
         					.addPreferredGap(ComponentPlacement.UNRELATED)))
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(ph_no, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(DOB, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(in_date, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(out_date, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         			.addGap(49)
         			.addComponent(jButton1)
         			.addContainerGap(98, Short.MAX_VALUE))
@@ -167,17 +168,23 @@ public class Room_book extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(!((name.getText()).equals(""))&&!(DOB.getText().equals(""))&&!((ph_no.getText()).equals(""))&&!((id.getText()).equals("")))
+        if(!((name.getText()).equals(""))&&!(out_date.getText().equals(""))&&!((in_date.getText()).equals(""))&&!((id.getText()).equals("")))
                 {
 //                    if(cb1.getSelectedItem().toString().equals("<None>"))
 //                    {
 //                        JOptionPane.showMessageDialog(this,"Select a department");
 //                    }
-                        String e_name = name.getText();
-                        String e_id = id.getText();
-                        String e_ph = ph_no.getText();
-                        String e_dob=DOB.getText();
-                        String query="insert into employee values('"+e_id+"','"+e_name+"','"+e_ph+"','"+e_dob+"','Y')";
+       
+
+
+                        
+                        String e_id = jLabel1.getText();
+                        int pid=Integer.parseInt(e_id);
+                        String e_rno = jLabel2.getText();
+                        int rno=Integer.parseInt(e_rno);
+                        String ind=jLabel4.getText();
+                        String outd=jLabel12.getText();
+                        String query="insert into booking values('"+e_id+"','"+rno+"','"+ind+"','"+outd+"')";
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
                         System.out.println(query);
@@ -202,8 +209,8 @@ public class Room_book extends javax.swing.JFrame {
                             
                             name.setText("");
                             id.setText("");
-                            DOB.setText("");
-                            ph_no.setText("");                          
+                            out_date.setText("");
+                            in_date.setText("");                          
                             con.close();  
                              
                         }
@@ -264,7 +271,7 @@ public class Room_book extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DOB;
+    private javax.swing.JTextField out_date;
     private javax.swing.JButton bb1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField id;
@@ -276,6 +283,6 @@ public class Room_book extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField name;
-    private javax.swing.JTextField ph_no;
+    private javax.swing.JTextField in_date;
     // End of variables declaration//GEN-END:variables
 }
