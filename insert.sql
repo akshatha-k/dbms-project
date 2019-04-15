@@ -1,3 +1,5 @@
+insert into donations values(0);
+
 INSERT INTO Department VALUES(1,'General Medicine',3);
 INSERT INTO Department VALUES(2,'Surgery',4);
 INSERT INTO Department VALUES(3,'Psychiatry',8);
@@ -69,5 +71,3 @@ insert into blood_bank values(1238,'25-JAN-2017 11:34:56.78','O+',250);
 insert into booking values(9918,103,'11-APR-2019','12-APR-2019');
 insert into booking values(3418,106,'11-APR-2019','12-APR-2019');
 
-insert into dependent values(7718,'Nithya','F','sister');
-insert into dependent values(2618,'Abhijeet','M','friend');
