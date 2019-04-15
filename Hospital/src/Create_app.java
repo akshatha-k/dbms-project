@@ -157,10 +157,10 @@ public class Create_app extends javax.swing.JFrame {
         	 jLabel1.setText("Patient ID");
 
              jLabel2.setText("Appointment Date");
-                        String p_id = jLabel1.getText();
+                        String p_id = id.getText();
                         int pid=Integer.parseInt(p_id);
-                        String a_date = jLabel2.getText();
-                        String query="insert into appointment values('"+pid+"','d_id','"+a_date+"')";
+                        String a_date = name.getText();
+                        String query="insert into appointment values('"+pid+"','"+d_id+"','"+a_date+"')";
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
                         System.out.println(query);
@@ -171,7 +171,7 @@ public class Create_app extends javax.swing.JFrame {
   
                             //step2 create  the connection object  
                             Connection con=DriverManager.getConnection(  
-                            "jdbc:oracle:thin:@localhost:1521:xe","system","happy123");  
+                            "jdbc:oracle:thin:@localhost:1521:xe","system","awesome12");  
 
                             //step3 create the statement object  
                             Statement stmt=con.createStatement();  

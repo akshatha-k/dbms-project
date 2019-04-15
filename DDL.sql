@@ -27,8 +27,8 @@ gender varchar(1) not null,
 email varchar(20),
 phno number(10) not null,
 address varchar(20),
-blood_group varchar(3) not null,
-check (gender in ('M', 'F', 'm', 'f'))
+blood_group varchar(5) not null,
+check (gender in ('M', 'F', 'm', 'f','O','o'))
 );
 
 create table doctor(

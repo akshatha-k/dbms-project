@@ -110,9 +110,9 @@ public class Admin_pat extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setText("Date of birth (DD-MM-YYYY) ");
+        jLabel12.setText("Date of birth (DD-MON-YYYY) ");
 
-        DOB.setToolTipText("Eg. 01-12-1998");
+        DOB.setToolTipText("Eg. 01-DEC-1998");
 
         bb1.setText("<-- Back");
         bb1.addActionListener(new java.awt.event.ActionListener() {
@@ -269,15 +269,13 @@ public class Admin_pat extends javax.swing.JFrame {
   
                             //step2 create  the connection object  
                             Connection con=DriverManager.getConnection(  
-                            "jdbc:oracle:thin:@localhost:1521:xe","system","happy123");  
+                            "jdbc:oracle:thin:@localhost:1521:xe","system","awesome12");  
 
                             //step3 create the statement object  
                             Statement stmt=con.createStatement();  
 
                             //step4 execute query
                             ResultSet rs = stmt.executeQuery(query);
-           
-                            rs = stmt.executeQuery(query2);
                             
                             JOptionPane.showMessageDialog(this,"Records successfully inserted");
                             
@@ -286,6 +284,7 @@ public class Admin_pat extends javax.swing.JFrame {
                             DOB.setText("");
                             email.setText("");
                             cb1.setSelectedIndex(0);
+                            rb1.isSelected();
                             ph_no.setText("");
                             address.setText("");
                             

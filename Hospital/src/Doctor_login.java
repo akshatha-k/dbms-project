@@ -115,7 +115,7 @@ public class Doctor_login extends javax.swing.JFrame {
         int did=Integer.parseInt(d_id);
         String b_id = tf2.getText();
         int dnum=Integer.parseInt(b_id);
-        String query = "select did,dno from companies where dno='"+dnum+"' and did='"+did+"'";
+        String query = "select did,dno from doctor where dno='"+dnum+"' and did='"+did+"'";
         //System.out.print(query);
         try{  
 //step1 load the driver class  

@@ -122,7 +122,7 @@ public class Patient_login extends javax.swing.JFrame {
         // TODO add your handling code here:
         String e_id = tf1.getText();
         String pno = tf2.getText();
-        String query = "select pid from patient where pid='"+e_id+"' and ph_no='"+pno+"'";
+        String query = "select pid from patient where pid='"+e_id+"' and phno='"+pno+"'";
         //System.out.print(query);
         try{  
 //step1 load the driver class  
@@ -130,7 +130,7 @@ Class.forName("oracle.jdbc.driver.OracleDriver");
   
 //step2 create  the connection object  
 Connection con=DriverManager.getConnection(  
-"jdbc:oracle:thin:@localhost:1521:xe","system","curio");  
+"jdbc:oracle:thin:@localhost:1521:xe","system","awesome12");  
   
 //step3 create the statement object  
 Statement stmt=con.createStatement();  
@@ -148,7 +148,7 @@ else
  //Open organization form
     this.setVisible(false); //false     
     Patient_dets ob = new Patient_dets(tf1.getText(),tf2.getText());
-   
+    ob.setVisible(true); 
 }   
 
   

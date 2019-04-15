@@ -125,12 +125,22 @@ public class Admin_page extends javax.swing.JFrame {
   
     //step2 create  the connection object  
     Connection con=DriverManager.getConnection(  
-    "jdbc:oracle:thin:@localhost:1521:xe","system","happy123");  
+    "jdbc:oracle:thin:@localhost:1521:xe","system","awesome12");  
   
     //step3 create the statement object  
     Statement stmt=con.createStatement();  
     //step4 execute query  
     ResultSet rs=stmt.executeQuery(query); 
+    if(((query.substring(0,6)).compareToIgnoreCase("insert"))==0)
+    {
+    	JOptionPane.showMessageDialog(this,"Records successfully inserted");
+    }
+    else if(((query.substring(0,6)).compareToIgnoreCase("update"))==0)
+    {
+    	JOptionPane.showMessageDialog(this,"Records successfully updated");
+    }
+    else 
+   {
     ResultSetMetaData rsMetaData = rs.getMetaData();
     int col = rsMetaData.getColumnCount();
     String col_list= " ";
@@ -154,6 +164,7 @@ public class Admin_page extends javax.swing.JFrame {
     con.close();  
   
     }
+   }
     catch(SQLException e){
     JOptionPane.showMessageDialog(this,"Enter a valid sql command"+e.toString());
     tf1.setText(" ");
@@ -161,8 +172,6 @@ public class Admin_page extends javax.swing.JFrame {
     catch(Exception e1){
        JOptionPane.showMessageDialog(this," "+e1.toString()); 
     }    
-  
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

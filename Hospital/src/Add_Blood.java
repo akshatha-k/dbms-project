@@ -154,11 +154,13 @@ public class Add_Blood extends javax.swing.JFrame {
 //                    {
 //                        JOptionPane.showMessageDialog(this,"Select a department");
 //                    }
-                        String p_id = jLabel1.getText();
+                        String p_id = id.getText();
                         int pid=Integer.parseInt(p_id);
-                        String p_quant = jLabel2.getText();
+                        String p_quant = name.getText();
                         int pq=Integer.parseInt(p_quant);
-                        String query="insert into blood_bank values('"+pid+"','"+pq+"')";
+                        long t=System.currentTimeMillis();
+                        String query="insert into blood_bank values('"+pid+"','"+t+"','"+pq+"')"; 
+//*******You forgot to check blood type by checking patient and u forgot to add time. Try to make those changes, maybe with cursor.***********************
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
                         System.out.println(query);
@@ -169,7 +171,7 @@ public class Add_Blood extends javax.swing.JFrame {
   
                             //step2 create  the connection object  
                             Connection con=DriverManager.getConnection(  
-                            "jdbc:oracle:thin:@localhost:1521:xe","system","happy123");  
+                            "jdbc:oracle:thin:@localhost:1521:xe","system","awesome12");  
 
                             //step3 create the statement object  
                             Statement stmt=con.createStatement();  

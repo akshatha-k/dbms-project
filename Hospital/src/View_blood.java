@@ -51,6 +51,7 @@ public class View_blood extends javax.swing.JFrame {
         id = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        comboBox = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         bb1 = new javax.swing.JButton();
@@ -83,7 +84,6 @@ public class View_blood extends javax.swing.JFrame {
             }
         });
         
-        JComboBox<String> comboBox = new JComboBox<String>();
         comboBox.setModel(new DefaultComboBoxModel(new String[] {"A+", "B+", "AB+", "O+", "A-", "B-", "AB-", "O-", "Other"}));
         
         JLabel label = new JLabel();
@@ -148,12 +148,6 @@ public class View_blood extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(comboBox.getSelectedItem().toString().equals("<None>"))
-        {
-            JOptionPane.showMessageDialog(this,"Select a Blood Group");
-        }
-        else
-        {
 //                    if(cb1.getSelectedItem().toString().equals("<None>"))
 //                    {
 //                        JOptionPane.showMessageDialog(this,"Select a department");
@@ -161,27 +155,31 @@ public class View_blood extends javax.swing.JFrame {
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
         				String b_g=comboBox.getSelectedItem().toString();
+        				id.setText("");       
         				String query = "select sum(amount) from blood_bank where blood_group='"+b_g+"'";
         		        //System.out.print(query);
-                        id.setText(query); 
                         try{
                             //step1 load the driver class  
                             Class.forName("oracle.jdbc.driver.OracleDriver");  
   
                             //step2 create  the connection object  
                             Connection con=DriverManager.getConnection(  
-                            "jdbc:oracle:thin:@localhost:1521:xe","system","happy123");  
+                            "jdbc:oracle:thin:@localhost:1521:xe","system","awesome12");  
 
                             //step3 create the statement object  
                             Statement stmt=con.createStatement();  
 
                             //step4 execute query
            
-//                            rs = stmt.executeQuery(query2);
-                            
-                            JOptionPane.showMessageDialog(this,"Records successfully inserted");
-                            
-                            id.setText("");                     
+                            ResultSet rs = stmt.executeQuery(query);
+                            while(rs.next())
+                            {
+                            	if(rs.getString(1)==null)
+                            		id.setText("0ml");
+                            	else
+                            		id.setText(rs.getString(1).concat("ml"));
+                            }
+//                            JOptionPane.showMessageDialog(this,"Records successfully inserted");              
                             con.close();  
                              
                         }
@@ -193,8 +191,7 @@ public class View_blood extends javax.swing.JFrame {
                         {
                             JOptionPane.showMessageDialog(this,"Error");
                         }   
-                }
-    }//GEN-LAST:event_jButton1ActionPerformed
+                }//GEN-LAST:event_jButton1ActionPerformed
 
     private void bb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bb1ActionPerformed
         // TODO add your handling code here:

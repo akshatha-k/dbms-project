@@ -178,12 +178,12 @@ public class Room_book extends javax.swing.JFrame {
 
 
                         
-                        String e_id = jLabel1.getText();
+                        String e_id = id.getText();
                         int pid=Integer.parseInt(e_id);
-                        String e_rno = jLabel2.getText();
+                        String e_rno = name.getText();
                         int rno=Integer.parseInt(e_rno);
-                        String ind=jLabel4.getText();
-                        String outd=jLabel12.getText();
+                        String ind=in_date.getText();
+                        String outd=out_date.getText();
                         String query="insert into booking values('"+e_id+"','"+rno+"','"+ind+"','"+outd+"')";
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
@@ -195,7 +195,7 @@ public class Room_book extends javax.swing.JFrame {
   
                             //step2 create  the connection object  
                             Connection con=DriverManager.getConnection(  
-                            "jdbc:oracle:thin:@localhost:1521:xe","system","happy123");  
+                            "jdbc:oracle:thin:@localhost:1521:xe","system","awesome12");  
 
                             //step3 create the statement object  
                             Statement stmt=con.createStatement();  

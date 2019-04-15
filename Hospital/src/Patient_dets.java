@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  * @author aditcam
  */
 public class Patient_dets extends javax.swing.JFrame {
-
+	int p_id;
     String compID;
     String brID;
     
@@ -35,6 +35,7 @@ public class Patient_dets extends javax.swing.JFrame {
     {
         initComponents();
         compID = c;
+        p_id=Integer.parseInt(compID);
         brID = b;
         displayEmps();
     }
@@ -142,7 +143,7 @@ public class Patient_dets extends javax.swing.JFrame {
    public void displayEmps()
     {
       ta1.setText("");
-      String query = "select e.name,w.emp_id,w.dept_id from works w,employee e where w.emp_ID = e.id and w.comp_ID = '" + compID + "'" + "and w.branch_ID = '"+brID+"'";
+      String query = "select pid,pat_name,dob,gender,email,phno,address,blood_group from patient where pid='"+p_id+"' ";
       System.out.println(query);
         
       try

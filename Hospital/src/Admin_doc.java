@@ -240,7 +240,7 @@ public class Admin_doc extends javax.swing.JFrame {
                         int eid=Integer.parseInt(e_id);
                         String e_ph = ph_no.getText();
                         int eph=Integer.parseInt(e_ph);
-                        String e_dept=jLabel12.getText();
+                        String e_dept=dno.getText();
                         int edno=Integer.parseInt(e_dept);
                         String e_address=address.getText();
                         String e_email=lblEmail.getText();
@@ -256,7 +256,7 @@ public class Admin_doc extends javax.swing.JFrame {
   
                             //step2 create  the connection object  
                             Connection con=DriverManager.getConnection(  
-                            "jdbc:oracle:thin:@localhost:1521:xe","system","happy123");  
+                            "jdbc:oracle:thin:@localhost:1521:xe","system","awesome12");  
 
                             //step3 create the statement object  
                             Statement stmt=con.createStatement();  
@@ -273,6 +273,7 @@ public class Admin_doc extends javax.swing.JFrame {
                             dno.setText("");
                             ph_no.setText("");
                             address.setText("");
+                            lblEmail.setText("");
                             
                             con.close();  
                              
