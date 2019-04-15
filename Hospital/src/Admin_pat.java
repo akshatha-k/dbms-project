@@ -248,17 +248,17 @@ public class Admin_pat extends javax.swing.JFrame {
                     }
                     else
                     {   
-                        String e_name = name.getText();
-                        String e_id = id.getText();
-                        int pid=Integer.parseInt(e_id);
-                        String e_email=email.getText();
-                        String e_ph = ph_no.getText();
-                        String e_address=address.getText();
-                        String e_bg=cb1.getSelectedItem().toString();
+                        String p_name = name.getText();
+                        String p_id = id.getText();
+                        int pid=Integer.parseInt(p_id);
+                        String p_email=email.getText();
+                        String p_ph = ph_no.getText();
+                        String p_address=address.getText();
+                        String p_bg=cb1.getSelectedItem().toString();
                        // String e_bg=temp.equals("A+")?"A+":temp.equals("B+")?"B+":temp.equals("Finance")?"003":temp.equals("Marketing")?"004":temp.equals("HR")?"005":temp.equals("Purchasing")?"006":temp.equals("Publicity")?"007":"008";
-                        String e_dob=DOB.getText();
-                        String e_hdeg= rb1.isSelected()?"M":rb2.isSelected()?"F":"O";
-                        String query="insert into patient values('"+pid+"','"+e_name+"','"+e_dob+"','"+e_hdeg+"','"+e_email+"','"+e_ph+"','"+e_address+"','"+e_bg+"')";
+                        String p_dob=DOB.getText();
+                        String p_hdeg= rb1.isSelected()?"M":rb2.isSelected()?"F":"O";
+                        String query="insert into patient values('"+pid+"','"+p_name+"','"+p_dob+"','"+p_hdeg+"','"+p_email+"','"+p_ph+"','"+p_address+"','"+p_bg+"')";
                         //String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
                         //System.out.println(query2);
                         System.out.println(query);

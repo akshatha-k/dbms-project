@@ -7,16 +7,19 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import java.awt.Button;
 import javax.swing.GroupLayout;
+import java.awt.Canvas;
+import java.awt.Label;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JTree;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-/**
- *
- * @author aditcam
- */
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -76,30 +79,31 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
+        			.addGap(69)
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(44)
-        					.addComponent(b_admin)
-        					.addGap(18)
-        					.addComponent(b_doc, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        						.addComponent(jLabel2)
+        						.addGroup(layout.createSequentialGroup()
+        							.addComponent(b_admin)
+        							.addGap(18)
+        							.addComponent(b_doc, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)))
         					.addGap(18)
         					.addComponent(b_pat, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE))
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(152)
-        					.addComponent(jLabel2))
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(184)
+        					.addGap(121)
         					.addComponent(jLabel1)))
         			.addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(23)
+        			.addGap(76)
         			.addComponent(jLabel1)
-        			.addGap(34)
+        			.addGap(72)
         			.addComponent(jLabel2)
-        			.addPreferredGap(ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(b_admin)
         				.addComponent(b_doc)

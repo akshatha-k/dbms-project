@@ -178,13 +178,13 @@ public class Room_book extends javax.swing.JFrame {
 
 
                         
-                        String e_id = id.getText();
-                        int pid=Integer.parseInt(e_id);
-                        String e_rno = name.getText();
-                        int rno=Integer.parseInt(e_rno);
+                        String p_id = id.getText();
+                        int pid=Integer.parseInt(p_id);
+                        String p_rno = name.getText();
+                        int rno=Integer.parseInt(p_rno);
                         String ind=in_date.getText();
                         String outd=out_date.getText();
-                        String query="insert into booking values('"+e_id+"','"+rno+"','"+ind+"','"+outd+"')";
+                        String query="insert into booking values('"+p_id+"','"+rno+"','"+ind+"','"+outd+"')";
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
                         System.out.println(query);

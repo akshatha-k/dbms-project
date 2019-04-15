@@ -235,17 +235,17 @@ public class Admin_doc extends javax.swing.JFrame {
                     }
                     else
                     {   
-                        String e_name = name.getText();
-                        String e_id = id.getText();
-                        int eid=Integer.parseInt(e_id);
-                        String e_ph = ph_no.getText();
-                        int eph=Integer.parseInt(e_ph);
-                        String e_dept=dno.getText();
-                        int edno=Integer.parseInt(e_dept);
-                        String e_address=address.getText();
-                        String e_email=lblEmail.getText();
-                        String e_hdeg= rb1.isSelected()?"M":rb2.isSelected()?"F":"O";
-                        String query="insert into doctor values('"+eid+"','"+edno+"','"+e_name+"','"+e_address+"','"+e_email+"','"+e_hdeg+"','"+eph+"')";
+                        String d_name = name.getText();
+                        String d_id = id.getText();
+                        int did=Integer.parseInt(d_id);
+                        String d_ph = ph_no.getText();
+                        int dph=Integer.parseInt(d_ph);
+                        String d_dept=dno.getText();
+                        int ddno=Integer.parseInt(d_dept);
+                        String d_address=address.getText();
+                        String d_email=lblEmail.getText();
+                        String d_hdeg= rb1.isSelected()?"M":rb2.isSelected()?"F":"O";
+                        String query="insert into doctor values('"+did+"','"+ddno+"','"+d_name+"','"+d_address+"','"+d_email+"','"+d_hdeg+"','"+dph+"')";
 //                        String query2="update dep set no_avl=no_avl+1,no_emp=no_emp+1 where dept_id='"+e_dept+"'";
 //                        System.out.println(query2);
                         System.out.println(query);
